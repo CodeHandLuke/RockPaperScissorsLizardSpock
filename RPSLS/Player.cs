@@ -9,16 +9,24 @@ namespace RPSLS
 	public abstract class Player
 	{
 		//member variables
-		public string name;
+		public string playerName;
 		public string selectedGesture;
+		public int score;
 
 		//constructor
 		public Player()
 		{
-
+			this.selectedGesture = null;
+			this.score = 0;
 		}
 
 		//member methods
-		public abstract void GetGesture();
+		public void InputName()
+		{
+			Console.WriteLine("Please enter a name for Player");
+			playerName = Console.ReadLine();
+		}
+
+		public abstract void GetGesture(List<string> gestures);
 	}
 }

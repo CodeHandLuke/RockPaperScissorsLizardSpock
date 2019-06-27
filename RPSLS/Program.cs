@@ -17,14 +17,15 @@ namespace RPSLS
 			//Show a winner depending on which choice a player made, then give that player 1 point. 
 			//Have the overall winner be the player that won two out of three games, which the score should be held in a total.
 			//Create an AI that will make a choice determined by a random number generated between one and five. That number will correlate to the gesture listed at the position of the playerChoice list
+			//
+
+			//Ask player(s) for name in the human and/or computer class through player virtual method
+			//get gesture in the human and/or computer class through player virtual method
+			//When the console is cleared, it also clears the rules. Try to have it added at the beginning of each turn
 
 			//Setup
 			Game newGame = new Game();
-
-			Setup setup = new Setup();
-			setup.ChooseGameType();
-			setup.CheckGameType();
-			setup.InitializeGameType();
+			newGame.RunGame();
 
 			//Gameplay loop
 
