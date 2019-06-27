@@ -10,7 +10,7 @@ namespace RPSLS
 	{
 		//member variables
 		Random rng;
-		public int gestureChoice;
+		public string gestureChoice;
 
 		//constructor
 		public Computer()

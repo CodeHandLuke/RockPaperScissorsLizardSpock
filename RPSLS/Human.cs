@@ -9,7 +9,8 @@ namespace RPSLS
 	public class Human : Player
 	{
 		//member variables
-		public int gestureChoice;
+		public string gestureChoice;
+		public bool isInputValid;
 
 		//constructor
 		public Human()
@@ -18,12 +19,43 @@ namespace RPSLS
 		}
 
 		//member methods
+
+		public string ValidateChoice()
+		{
+			isInputValid = false;
+			while (!isInputValid)
+			{
+				Console.WriteLine($"{playerName}, please choose which gesture you want throw for your turn by typing in a number from 0 - 4.\n0:rock\n1:paper\n2:scissors\n3:lizard\n4:Spock");
+				gestureChoice = Console.ReadLine();
+				switch (gestureChoice)
+				{
+					case "0":
+						isInputValid = true;
+						return gestureChoice;
+					case "1":
+						isInputValid = true;
+						return gestureChoice;
+					case "2":
+						isInputValid = true;
+						return gestureChoice;
+					case "3":
+						isInputValid = true;
+						return gestureChoice;
+					case "4":
+						isInputValid = true;
+						return gestureChoice;
+					default:
+						Console.WriteLine("Invalid Input, Try again.");
+						break;
+				}
+			}
+			return gestureChoice;
+		}
 		public override void GetGesture(List<string> gestures)
 		{
-			Console.WriteLine("Choose which gesture you want throw for your turn by typing in a number from 0 - 4.\n0:rock\n1:paper\n2:scissors\n3:lizard\n4:Spock");
-			gestureChoice = Convert.ToInt32(Console.ReadLine());
-			this.selectedGesture = GetGestureFromList(gestureChoice, gestures);
-			Console.WriteLine($"{playerName} chose {selectedGesture}!\nPress enter to clear the console and pass to next player");
+			ValidateChoice();
+			this.selectedGesture = GetGestureFromList(Convert.ToInt32(gestureChoice), gestures);
+			Console.WriteLine($"You chose {selectedGesture}!\nPress enter to clear the console and go to next step");
 			Console.ReadLine();
 			Console.Clear();
 		}
@@ -32,5 +64,7 @@ namespace RPSLS
 		{
 			return gestures[index];
 		}
+
+
 	}
 }
