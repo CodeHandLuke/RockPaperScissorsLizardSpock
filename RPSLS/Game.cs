@@ -35,7 +35,7 @@ namespace RPSLS
 		//member methods
 		public void DisplayRules()
 		{
-			Console.WriteLine("Rules\n1. Scissors cuts Paper\n2. Paper covers Rock\n3. Rock crushes Lizard\n4. Lizard poisons Spock\n5. Spock smashes Scissors\n6. Scissors decapitates Lizard\n7. Lizard eats Paper\n8. Paper disproves Spock\n9. Spock vaporizes Rock\n");
+			Console.WriteLine("Rules of Rock, Paper, Scissors, Lizard, Spock\n1. Scissors cuts Paper\n2. Paper covers Rock\n3. Rock crushes Lizard\n4. Lizard poisons Spock\n5. Spock smashes Scissors\n6. Scissors decapitates Lizard\n7. Lizard eats Paper\n8. Paper disproves Spock\n9. Spock vaporizes Rock\n");
 		}
 
 		public void RunGame()
@@ -52,6 +52,7 @@ namespace RPSLS
 			{
 				Console.WriteLine("Do you want to proceed to Single Player? Type 'yes' to play against AI or 'no' to play against another person!");
 				gameType = Console.ReadLine();
+				Console.WriteLine("\n");
 				switch (gameType)
 				{
 					case "yes":
@@ -74,6 +75,8 @@ namespace RPSLS
 				player1 = new Human();
 				player2 = new Computer();
 				player1.InputName();
+				Console.WriteLine("\n");
+				Console.Clear();
 				ScoreCheck();
 			}
 
@@ -82,7 +85,10 @@ namespace RPSLS
 				player1 = new Human();
 				player2 = new Human();
 				player1.InputName();
+				Console.WriteLine("\n");
 				player2.InputName();
+				Console.Clear();
+				//Console.WriteLine("\n");
 				ScoreCheck();
 			}
 		}
@@ -108,9 +114,9 @@ namespace RPSLS
 			}
 		}
 
-		public void PlayGame() //possibly change name to game loop
+		public void PlayGame()
 		{
-			//create a while or a do-while loop for to run this as long as the players' scores are less than 2
+			DisplayRules();
 			player1.GetGesture(gestures);
 			DisplayRules();
 			player2.GetGesture(gestures);
@@ -267,7 +273,7 @@ namespace RPSLS
 			string newGame = "";
 			while (!endGameInput)
 			{
-				Console.WriteLine($"That is the end of the game! Type '0' to replay the game with same players or type '1' to completely restart the game. Press any other key to exit the application");
+				Console.WriteLine($"That is the end of the game! Type '0' to replay the game with same players or type '1' to completely restart the game. Press any other key to exit the application\n\nLive long and prosper!");
 				newGame = Console.ReadLine();
 				switch (newGame)
 				{

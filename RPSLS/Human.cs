@@ -55,6 +55,7 @@ namespace RPSLS
 		{
 			ValidateChoice();
 			this.selectedGesture = GetGestureFromList(Convert.ToInt32(gestureChoice), gestures);
+			Console.WriteLine("\n");
 			Console.WriteLine($"You chose {selectedGesture}!\nPress enter to clear the console and go to next step");
 			Console.ReadLine();
 			Console.Clear();
