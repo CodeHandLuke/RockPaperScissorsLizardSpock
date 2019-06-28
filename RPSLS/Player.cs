@@ -21,12 +21,12 @@ namespace RPSLS
 		}
 
 		//member methods
-		public void InputName()
+		public void InputName() //This method serves to have the players (human) input their own name
 		{
 			Console.WriteLine("Please enter a name for Player");
 			playerName = Console.ReadLine();
 		}
 
-		public abstract void GetGesture(List<string> gestures);
+		public abstract void GetGesture(List<string> gestures); //The overall abstract method of GetGesture is a method that I want all players to inherit. This will let them choose which of the RPSLS they want to throw out per turn
 	}
 }

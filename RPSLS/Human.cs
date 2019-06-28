@@ -9,8 +9,7 @@ namespace RPSLS
 	public class Human : Player
 	{
 		//member variables
-		public string gestureChoice;
-		public bool isInputValid;
+		
 
 		//constructor
 		public Human()
@@ -22,7 +21,8 @@ namespace RPSLS
 
 		public string ValidateChoice()
 		{
-			isInputValid = false;
+			bool isInputValid = false;
+			string gestureChoice = "";
 			while (!isInputValid)
 			{
 				Console.WriteLine($"{playerName}, please choose which gesture you want throw for your turn by typing in a number from 0 - 4.\n0:rock\n1:paper\n2:scissors\n3:lizard\n4:Spock");
@@ -53,8 +53,8 @@ namespace RPSLS
 		}
 		public override void GetGesture(List<string> gestures)
 		{
-			ValidateChoice();
-			this.selectedGesture = GetGestureFromList(Convert.ToInt32(gestureChoice), gestures);
+			string result = ValidateChoice();
+			this.selectedGesture = GetGestureFromList(Convert.ToInt32(result), gestures);
 			Console.WriteLine("\n");
 			Console.WriteLine($"You chose {selectedGesture}!\nPress enter to clear the console and go to next step");
 			Console.ReadLine();
