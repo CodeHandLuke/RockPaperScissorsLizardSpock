@@ -15,6 +15,7 @@ namespace RPSLS
 		Player player2;
 		public string gameType;
 		public int pointsToWin;
+		bool endGameInput;
 
 		//constructor
 		public Game()
@@ -46,8 +47,8 @@ namespace RPSLS
 
 		public string ChooseGameType()
 		{
-			bool isInputValid = false;
-			while (!isInputValid)
+			bool endGameInput = false;
+			while (!endGameInput)
 			{
 				Console.WriteLine("Do you want to proceed to Single Player? Type 'yes' to play against AI or 'no' to play against another person!");
 				gameType = Console.ReadLine();
@@ -92,15 +93,13 @@ namespace RPSLS
 			if (player1.score >= pointsToWin)
 			{
 				Console.WriteLine($"{player1.playerName} has won the best of three game!");
-				//restart or end game method
-				Console.ReadLine();
+				InitializeEndGame();
 			}
 
 			else if (player2.score >= pointsToWin)
 			{
 				Console.WriteLine($"{player2.playerName} has won the best of three game!");
-				//restart or end game method
-				Console.ReadLine();
+				InitializeEndGame();
 			}
 
 			else
@@ -262,6 +261,48 @@ namespace RPSLS
 			ScoreCheck();
 		}
 
+		public string EndGame()
+		{
+			endGameInput = false;
+			string newGame = "";
+			while (!endGameInput)
+			{
+				Console.WriteLine($"That is the end of the game! Type '0' to replay the game with same players or type '1' to completely restart the game. Press any other key to exit the application");
+				newGame = Console.ReadLine();
+				switch (newGame)
+				{
+					case "0":
+						endGameInput = true;
+						return newGame;
+					case "1":
+						endGameInput = true;
+						return newGame;
+					default:
+						Environment.Exit(0);
+						break;
+				}
+			}
+			return newGame;
+		}
+
+		public void InitializeEndGame()
+		{
+			
+			string result = EndGame();
+			if (result == "0")
+			{
+				player1.score = 0;
+				player2.score = 0;
+				ScoreCheck();
+			}
+
+			else if (result == "1")
+			{
+				player1.score = 0;
+				player2.score = 0;
+				RunGame();
+			}
+		}
 
 
 	}
