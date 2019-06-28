@@ -123,9 +123,134 @@ namespace RPSLS
 
 		public void CompareGestures()
 		{
-			if (player1.selectedGesture == "rock" && player2.selectedGesture == "scissors")
+			if (player1.selectedGesture == player2.selectedGesture)
 			{
+				Console.WriteLine("You two chose the same gesture, it's a draw! Try again");
+			}
+
+			else if (player1.selectedGesture == "rock" && player2.selectedGesture == "scissors")
+			{
+				Console.WriteLine("Rock crushes Scissors!");
 				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "rock" && player2.selectedGesture == "lizard")
+			{
+				Console.WriteLine("Rock crushes Lizard!");
+				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "rock" && player2.selectedGesture == "paper")
+			{
+				Console.WriteLine("Paper covers Rock!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "rock" && player2.selectedGesture == "spock")
+			{
+				Console.WriteLine("Spock vaporizes Rock!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "paper" && player2.selectedGesture == "scissors")
+			{
+				Console.WriteLine("Scissors cuts Paper!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "paper" && player2.selectedGesture == "rock")
+			{
+				Console.WriteLine("Paper covers Rock!");
+				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "paper" && player2.selectedGesture == "lizard")
+			{
+				Console.WriteLine("Lizard eats Paper!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "paper" && player2.selectedGesture == "spock")
+			{
+				Console.WriteLine("Paper disproves Spock!");
+				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "scissors" && player2.selectedGesture == "paper")
+			{
+				Console.WriteLine("Scissors cuts Paper!");
+				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "scissors" && player2.selectedGesture == "rock")
+			{
+				Console.WriteLine("Rock crushes Scissors!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "scissors" && player2.selectedGesture == "spock")
+			{
+				Console.WriteLine("Spock smashes Scissors!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "scissors" && player2.selectedGesture == "lizard")
+			{
+				Console.WriteLine("Scissors decapitates Lizard!");
+				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "lizard" && player2.selectedGesture == "spock")
+			{
+				Console.WriteLine("Lizard poisons Spock!");
+				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "lizard" && player2.selectedGesture == "scissors")
+			{
+				Console.WriteLine("Scissors decapitates Lizard!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "lizard" && player2.selectedGesture == "rock")
+			{
+				Console.WriteLine("Rock crushes Lizard!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "lizard" && player2.selectedGesture == "paper")
+			{
+				Console.WriteLine("Lizard eats Paper!");
+				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "spock" && player2.selectedGesture == "lizard")
+			{
+				Console.WriteLine("Lizard poisons Spock!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "spock" && player2.selectedGesture == "scissors")
+			{
+				Console.WriteLine("Spock smashes Scissors!");
+				player1.score += 1;
+			}
+
+			else if (player1.selectedGesture == "spock" && player2.selectedGesture == "paper")
+			{
+				Console.WriteLine("Paper disproves Spock!");
+				player2.score += 1;
+			}
+
+			else if (player1.selectedGesture == "spock" && player2.selectedGesture == "rock")
+			{
+				Console.WriteLine("Spock vaporizes Rock!");
+				player1.score += 1;
+			}
+
+			else
+			{
+				ScoreCheck();
 			}
 		}
 
